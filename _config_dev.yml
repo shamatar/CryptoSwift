@@ -67,6 +67,8 @@ include: ["_categories"]
 exclude:
   - LICENSE.md
   - README.md
+  - Gemfile
+  - Gemfile.lock
   - CNAME
   - Vagrantfile
   - runj.sh
