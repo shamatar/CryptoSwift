@@ -1,1 +1,0 @@
-let hash = "123".md5() // "123".bytes.md5()

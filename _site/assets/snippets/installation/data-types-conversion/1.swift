@@ -1,1 +1,0 @@
-let data = Data(bytes: [0x01, 0x02, 0x03])

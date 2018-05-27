@@ -1,1 +1,0 @@
-let bytes: Array<UInt8> = "password".bytes  // Array("password".utf8)

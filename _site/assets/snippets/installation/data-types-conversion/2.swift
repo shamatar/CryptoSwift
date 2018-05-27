@@ -1,1 +1,0 @@
-let bytes = data.bytes                     // [1,2,3]
