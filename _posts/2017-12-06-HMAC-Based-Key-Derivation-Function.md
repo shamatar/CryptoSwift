@@ -3,7 +3,7 @@ layout: example
 title: "Examples"
 subtitle: "HMAC-based Key Derivation Function"
 languages: "swift:Swift"
-snippetpath: snippets/examples/hmac-key-derivation/
+snippetpath: snippets/examples/HMAC-key-derivation/
 categories: 
   - Examples
 selectlanguage: true
