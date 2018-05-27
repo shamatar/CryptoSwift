@@ -1,0 +1,30 @@
+{%- if include.f.title.text == "" %}
+{%- else %}
+<div id="getting-started" class="uk-card uk-card-body uk-card-default uk-text-center uk-padding-small uk-margin-small ">
+  <h1 id="{{ include.f.title.text | replace: ' ', '-' | downcase }}" class="uk-heading-hero" style="letter-spacing: 1px;" {{ include.f.title.css-attribute }}><span>{{ include.f.title.text }}</span></h1>
+</div>
+{%- endif %}
+<div class="uk-container uk-text-center uk-container-large uk-margin-remove-bottom">
+  <div class="mod-feature-accordion uk-section uk-section-default uk-padding-small">
+    <div class="uk-card uk-card-body uk-border-rounded">
+  {%- if include.f.subtitle.text == "" %}
+  {%- else %}
+      <h1 class="uk-heading-large uk-margin-remove-top" {{ include.f.subtitle.css-attribute }}>{{ include.f.subtitle.text }}</h1>
+  {%- endif %}
+      <div class="uk-text-left" {{ include.f.content.css-attribute }}>
+        {%- if include.f.subtitle.text == "" %}
+        {%- else %}
+          {%- include {{ include.f.overview-url }} %}
+        {%- endif %}
+      </div>        
+      <ul class="uk-text-left" uk-accordion>
+        {%- for install in include.f.sections %}
+        <li>
+          <h2 id="{{ install.title | replace: ' ', '-' | downcase }}" class="uk-accordion-title" style="font-variant-caps: all-small-caps; font-size: 24px; font-weight: 400;">{{ install.title }}</h2><hr class="uk-margin-remove-vertical uk-padding-remove-vertical">
+          {%- include {{ install.url }} %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

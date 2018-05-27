@@ -1,0 +1,17 @@
+{%- assign any-code = false %}
+{%- assign languages = page.languages | split: ',' %}
+{%- assign language-count = languages | size %}
+{%- if language-count > 1 %}
+  {%- assign any-code = true %}
+{%- endif %}
+{%- if any-code %}
+<div class="mod-code-menu uk-navbar-item uk-visible@s uk-padding-remove-left">
+  <span class="mod-nav-icon uk-iconnav" uk-icon="icon: code; ratio: 1;" title="Code Language" uk-tooltip></span>
+  <div uk-drop="mode: click; animation: uk-animation-slide-right; boundary: .mod-nav-main; boundary-align: true; pos: bottom-justify; offset: -10;">
+    <div class="mod-language-menu uk-card uk-card-secondary uk-card-body uk-card-small">
+      <span class="uk-text-small uk-text-muted uk-margin-remove uk-padding-remove">Language:</span>
+      <span id="code-language-span" class="uk-h6 uk-margin-remove uk-padding-remove uk-border-rounded"></span>
+    </div>
+  </div>
+</div>
+{%- endif %}

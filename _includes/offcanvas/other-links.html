@@ -1,0 +1,7 @@
+{%- for link in site.data.config.offcanvas.other-links %}
+  {%- if link.active == true %}
+<li>
+  <a class="mod-offcanvas-nav-item" href="{{ link.url }}" target="_blank"><span class="uk-margin-small-right" uk-icon="icon: {{ link.icon }}"></span> {{ link.title }}</a>
+</li>
+  {%- endif %}
+{%- endfor %}

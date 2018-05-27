@@ -1,0 +1,78 @@
+{%- if IgnoreTheseComments %}
+<!--  
+Expected input 
+      l: "cs:C#,cpp:C++" extension:title  - Languages used in the posty
+      p: Relative path to codes snippets
+      filename: e.g. '1' excluding extension
+      closed: true (default = false)
+      c: false (default = true)  : card border visible
+      m: true (default = false) : minimal padding
+      h: false (defualt = true) : heading visible
+      t: title (default = language name)
+-->
+{%- endif %}
+{%- include /helpers/theme.html %}
+{%- assign idPrefix = page.subtitle | remove: ' ' '' | remove: ':' '' | remove: '<' '' | remove: '>' '' | remove: '/' '' | remove: '.' '' | remove: '=' '' | remove: '_' '' | remove: "'" '' | remove: "-" '' | downcase %}
+{%- if include.c == true or include.c == null %}
+  {%- assign card-style = 'uk-card-default uk-box-shadow-small uk-border-rounded' %}
+{%- else %}
+  {%- assign card-style = '' %}
+{%- endif %}
+{%- assign languages = include.l | split: ',' %}
+{%- assign firstlanguage = languages[0] %}
+{%- assign codestartno = codestartno | plus: 1 %}
+{%- for parts in languages %}
+{%- assign language = parts | split: ':' %}
+{%- assign extension = language[0] %}
+{%- if include.t == null %}
+  {%- assign title = language[1] %}
+{%- else %}
+  {%- assign title = include.t %}
+{%- endif %}
+{%- assign filepath = include.p | append: include.filename | append: "." | append: extension %}
+{%- if site.data.config.base.code-show-lineno == true %}
+  {%- assign extension = extension | append: '-lineno' %}
+{%- endif %}
+{%- assign codehighlight = '/languages/' | append: extension | append: '.html' %}
+{%- assign download = filepath | prepend: '/assets/' %}
+{%- assign codeblockid = 'codeblock-' | append: title | append: codestartno %}
+{%- if firstlanguage == parts or page.selectlanguage == false %}
+  {%- if include.m == true %}
+  <div id="language" class="{{ title }} uk-card {{ card-style }} uk-card-body uk-padding-remove uk-margin-remove" style="display: block; background-color: {{ theme.codeblock.background }};">
+  {%- else %}
+  <div id="language" class="{{ title }} uk-card {{ card-style }} uk-card-body uk-padding-small uk-margin-remove" style="display: block; background-color: {{ theme.codeblock.background }};">
+  {%- endif %}
+{%- else %}
+  {%- if include.m == true %}
+  <div id="language" class="{{ title }} uk-card {{ card-style }} uk-card-body uk-padding-remove uk-margin-remove" style="display: none; background-color: {{ theme.codeblock.background }};">
+  {%- else %}
+  <div id="language" class="{{ title }} uk-card {{ card-style }} uk-card-body uk-padding-small uk-margin-remove" style="display: none; background-color: {{ theme.codeblock.background }};">
+  {%- endif %}
+{%- endif %} 
+  <ul id="accordion-{{ idPrefix }}-{{ codeblockid }}" class="uk-list">
+{%- if include.closed == true %}
+    <li>
+{%- else %}
+    <li class="uk-open">
+{%- endif %}
+{%- if include.m == true %}
+      <span class="uk-h6 uk-text-small uk-padding-remove uk-margin-remove-vertical uk-text-capitalize">{%- if include.h == false %}{%- else %}{{ title }}{%- endif %}
+{%- else %}
+      <span class="uk-h6 uk-text-small uk-padding-remove-vertical uk-text-capitalize">{%- if include.h == false %}{%- else %}{{ title }}{%- endif %}
+{%- endif %}
+        <span class="uk-align-right">
+          <span class="uk-icon-link" title="Copy To Clipboard" uk-tooltip><a onclick="copyElementInnerTextToClipboard('{{ idPrefix }}-{{ codeblockid }}');" uk-icon="icon: copy; ratio: 1"></a></span>
+          <span class="uk-icon-link" title="Download" uk-tooltip><a onclick="window.open('{{ download | prepend: site.url }}');" uk-icon="icon: download; ratio: 1"></a></span>
+        </span>
+      </span>
+{%- if include.m == true %}
+      <div id="{{ idPrefix }}-{{ codeblockid }}" class="uk-accordion-content uk-margin-remove-vertical uk-padding-remove-vertical">
+{%- else %}
+      <div id="{{ idPrefix }}-{{ codeblockid }}" class="uk-accordion-content uk-margin-remove-bottom uk-margin-small-top uk-padding-remove-vertical">
+{%- endif %}
+        {% include {{ codehighlight }} codesnip=filepath %}
+      </div>
+    </li>
+  </ul>
+</div>
+{%- endfor %}

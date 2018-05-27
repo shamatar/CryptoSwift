@@ -1,0 +1,41 @@
+{%- include /helpers/theme.html %}
+{%- if theme.modalwindow.dark == true %}
+  {%- assign cardcolor = "uk-card-secondary" %}
+  {%- assign pcolor = "uk-light" %}
+{%- else %}
+  {%- assign cardcolor = "uk-card-default" %}
+  {%- assign pcolor = "" %}
+{%- endif %}
+<div class="mod-modal-body uk-card uk-card-small uk-padding-remove uk-margin-remove uk-grid-collapse uk-child-width-1-1@s uk-margin-remove" uk-grid>
+  <div class="uk-card-header">
+    <div class="uk-grid-small uk-flex-middle" uk-grid>
+      <div class="uk-width-auto">
+        <img class="uk-border-circle" width="70" height="70" src="{{ site.data.config.base.profile-image-url }}">
+      </div>
+      <div class="uk-width-expand">
+        <h1 class="uk-card-title uk-margin-remove-bottom">{{ site.data.config.base.contact-fullname }} <span class="uk-link-muted" uk-icon="icon: speaker; ratio: 1.5;" onclick="$('#{{ site.data.config.base.contact-fullname | remove: ' ' | downcase | utf8 }}-player').get(0).play()" title="Pronunciation" uk-tooltip></span></h1>
+        <table>
+          <thead>
+            <tr class="uk-margin-remove-bottom uk-padding-remove-bottom">
+              <th class="uk-width-1-6"></th>
+              <th class="uk-width-expand"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="mod-donation-icon" uk-icon="icon: mail"></span>
+              </td>
+              <td>
+                <a class="uk-link-muted uk-text-small uk-text-bold href="mailto:{{ site.data.config.base.contact-email }}?subject=Donation" title="Email me about donation questions" uk-tooltip>{{ site.data.config.base.contact-email }}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="uk-card-footer">
+    <p class="{{ pcolor }}"><a class="mod-donation-button-donate uk-button uk-button-danger uk-button-small uk-text-bold uk-border-rounded" href="{{ site.data.config.base.paypal-donation-url }}" rel="nofollow" target="_blank">Donate</a><span class="uk-text-bold">&nbsp;&nbsp;to make the {{ site.data.config.base.title.text | remove: ' ' }} awesome! Thank you.</span></p>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="uk-accordion-content">
+  <p>Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9).</p>
+  <div class="uk-grid uk-grid-divider uk-grid-margin uk-padding-small" uk-grid>
+    <div class="uk-width-1-2@s">
+      <div class="uk-panel uk-text-left">
+        <ul class="uk-list uk-list-bullet">
+          <li>Drag the CryptoSwift.xcodeproj file into your Xcode project, and add appropriate framework as a dependency to your target.</li>
+          <li>Now select your App and choose the General tab for the app target.</li>
+          <li>Find Embedded Binaries and press "+", then select CryptoSwift.framework (iOS, OS X, watchOS or tvOS)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="uk-width-1-2@s">
+      <div class="uk-panel">
+        <div uk-lightbox="animation: scale">
+          <a class="uk-button uk-button-default" href="/assets/img/install-1.png" data-caption="If the embedded framework option is not possible; you can add it as a new build phase for the target" style="border:0 !important;" title="Click to enlarge screenshots" uk-tooltip><img src="/assets/img/install-1.png" alt="Embedded Framework"></a>
+          <a class="uk-button uk-button-default" href="/assets/img/install-2.png" caption="Adding a new build phase"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

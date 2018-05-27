@@ -1,0 +1,23 @@
+{%- for share in site.data.config.social-share %}
+  {%- if share.active %}
+    {%- if share.service == "email" %}
+    <li><a class="mod-offcanvas-nav-subitem" href="mailto:insert%20your%20email%20address?subject={{ page.title }}&nbsp;:&nbsp;{{ page.subtitle }}&amp;body={{ site.url }}{{ page.url }}" title="Share this on {{ share.service }}" uk-tooltip><span class="uk-margin-small-right" uk-icon="icon: {{ share.uk-icon }};"></span> {{ share.service }}</a></li>
+    {%- else %}
+      {%- assign urlFirstChar = share.url | slice: 0 %}
+      {%- assign href="#" %}
+      {%- if urlFirstChar == "?" %}
+        {%- assign href = share.base | append: share.url | append: site.url | append: page.url %}
+        {%- if share.title == blank %}
+        {%- else %}
+          {%- assign href = href | append: share.title | append: page.title | append: " : " | append: page.subtitle %}
+        {%- endif %}
+      {%- else %}
+        {%- if share.title == blank %}
+        {%- else %}
+          {%- assign href = share.base | append: share.title | append: page.title | append: " : " | append: page.subtitle | append: share.url | append: site.url | append: page.url %}
+        {%- endif %}
+      {%- endif %}
+      <li><a class="mod-offcanvas-nav-subitem" href="{{ href }}" title="Share this on {{ share.service }}" uk-tooltip><span class="uk-margin-small-right" uk-icon="icon: {{ share.uk-icon }};"></span> {{ share.service }}</a></li>
+    {% endif %}
+  {%- endif %}
+{%- endfor %}

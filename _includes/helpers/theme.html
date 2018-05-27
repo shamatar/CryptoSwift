@@ -1,0 +1,6 @@
+{%- for theme in site.data.config.themes %}
+  {%- if site.data.config.base.theme == theme.id %}
+    {%- assign theme = theme %}
+    {%- break %}
+  {%- endif %}
+{%- endfor -%}

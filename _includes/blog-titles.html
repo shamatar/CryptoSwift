@@ -1,0 +1,23 @@
+<tr class="mod-search-chosen-tag" data-tags="{{post.tags | join: ',' }}" data-series="{{ post.series }}">
+  <td class="uk-padding-remove-vertical">
+    <a class="mod-index-titles uk-link-muted" href="{{ post.url | prepend: site.baseurl }}">
+      <div class="uk-card uk-card-small">
+        <div class="uk-margin-remove uk-padding-remove">
+          <p class="mod-index-date uk-text-center uk-margin-remove uk-padding-remove uk-visible@s">&nbsp;&nbsp;{{ post.date | date: "%-d" }}&nbsp;{{ post.date | date: "%-B" }}&nbsp;&nbsp;</p>
+          <p class="mod-index-date uk-text-center uk-margin-remove uk-padding-remove uk-hidden@s">&nbsp;&nbsp;{{ post.date | date: "%-d" }}&nbsp;{{ post.date | date: "%-b" }}&nbsp;&nbsp;</p>
+        </div>
+        <div class="uk-margin-remove uk-padding-remove">
+          <p class="mod-index-date uk-text-center uk-margin-remove uk-padding-remove">{{ post.date | date: "%Y" }}</p>
+        </div>
+      </div>
+    </a>
+  </td>
+  <td class="uk-padding-remove-vertical" valign="bottom">
+    <a class="mod-index-titles uk-link-muted" href="{{ post.url | prepend: site.baseurl }}">
+      <div class="uk-padding-remove uk-border-rounded uk-table-middle uk-text-truncate" style="margin-top: 4px;">
+        <p class="mod-index-title uk-h5 uk-padding-remove uk-margin-remove uk-text-capitalize">{{ post.title }}</p>
+        <p class="mod-index-subtitle uk-margin-remove uk-padding-remove">{{ post.subtitle }}</p>
+      </div>
+    </a>
+  </td>
+</tr>

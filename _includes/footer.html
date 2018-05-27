@@ -1,0 +1,37 @@
+{%- include tags.html %}
+{%- assign previous = false %}
+{%- if paginator.previous_page and paginator.total_pages > 1 %}
+  {%- assign previous_href = paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' %}
+  {%- assign previous = true %}
+{%- elsif page.previous.url %}
+  {%- assign previous_href = page.previous.url | prepend: site.baseurl | replace: '//', '/' %}
+  {%- assign previous = true %}
+{%- endif %}
+{%- assign next = false %}
+{%- if paginator.next_page and paginator.total_pages > 1 %}
+  {%- assign next_href = paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' %}
+  {%- assign next = true %}
+{%- elsif page.previous.url %}
+  {%- assign next_href = page.next.url | prepend: site.baseurl | replace: '//', '/' %}
+  {%- assign next = true %}
+{%- endif %}
+<footer class="mod-footer uk-card uk-card-secondary uk-card-body uk-card-small">
+  <nav class="mod-footer-navbar uk-navbar-container uk-navbar-transparent uk-margin-remove-vertical uk-padding-remove-vertical" uk-navbar>
+    {%- if previous %}
+    <div class="uk-navbar-left uk-link-muted uk-margin-small-left">
+      <a class="uk-text-uppercase uk-slidenav-large" href="{{ previous_href }}" title="Older Posts" uk-tooltip uk-slidenav-previous></a>
+    </div>
+    {%- endif %}
+    <div class="uk-navbar-center">
+      <a class="uk-navbar-item uk-text-lowercase uk-link-muted" href="{{ site.url }}">
+        <h2 class="mod-footer-title"><span uk-icon="icon: copyright"></span> {{ site.data.config.base.title.text | remove: ' ' }} <time>{{ site.time | date: "%-B %Y" }}</time></h2>
+      </a>
+    </div>
+    {%- if next %}
+    <div class="uk-navbar-right uk-link-muted uk-margin-small-right">
+      <a class="uk-text-uppercase uk-slidenav-large" href="{{ next_href }}" title="Newer Posts" uk-tooltip uk-slidenav-next></a>
+    </div>
+    {%- endif %}
+  </nav>
+  <a id="bottom" style="visibility: hidden;">bottom</a>
+</footer>

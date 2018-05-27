@@ -1,0 +1,28 @@
+{%- capture site_tags %}
+  {%- for tag in site.tags %}
+    {{tag | first}}{% unless forloop.last %},{% endunless %}
+  {%- endfor %}
+{%- endcapture %}
+{%- assign tag_keywords = site_tags | split: "," | sort %}
+{%- if page.path contains '_posts' %}
+{%- elsif page.path contains '404.html' %}
+{%- else %}
+<div class="mod-search-menu-icon uk-navbar-item uk-visible@s uk-padding-remove-left">
+  <span class="mod-nav-icon uk-iconnav" uk-icon="icon: search; ratio: 1;" title="Search Tags" uk-tooltip></span>
+  <div uk-drop="mode: click; animation: uk-animation-slide-right; boundary: .mod-nav-main; boundary-align: true; pos: bottom-justify; offset: -10;">
+    <div class="mod-search-menu-card uk-card uk-card-default uk-card-body uk-card-small">
+      <div class="uk-navbar-left uk-flex-1">
+        <div class="uk-margin-small-left uk-margin-small-right uk-width-expand">
+          <form class="uk-width-1-1">
+            <select class="mod-search-chosen uk-margin-remove uk-padding-remove uk-border-rounded" multiple tabindex="4">
+            {%- for tag in tag_keywords %}
+              <option value="{{tag | strip}}">{{tag | strip}}</option>
+            {%- endfor %}
+            </select>
+          </form>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+{%- endif %}

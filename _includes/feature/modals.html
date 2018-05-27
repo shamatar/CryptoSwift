@@ -1,0 +1,5 @@
+{%- for modal in site.data.config.modals %}
+  {%- if site.data.config.feature.modals contains modal.id %}
+    {%- include /modals/modal-window.html id=modal.id title=modal.title url=modal.url %}
+  {%- endif %}
+{%- endfor -%}

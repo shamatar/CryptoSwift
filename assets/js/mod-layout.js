@@ -1,3 +1,6 @@
+---
+layout: null
+---
 function initOffCanvasMenu() {
   var h1 = function(id, title) {
     return '<li class="uk-parent"><a href="#" class="mod-offcanvas-toc-h1">' + title + '</a><ul class="uk-nav-sub">';
@@ -124,7 +127,7 @@ function applyOffsetToHREF() {
   }
 }
 
-var latestRelease="https://api.github.com/repos/krzyzanowskim/CryptoSwift/releases/latest";
+var latestRelease="{{ site.data.config.download.github-latest-release-url }}";
 $.getJSON(latestRelease, {
   format: "json"
 })

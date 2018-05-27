@@ -1,0 +1,17 @@
+<div class="uk-accordion-content">
+  <p>CryptoSwift also supports <a href="https://cocoapods.org/pods/CryptoSwift" target="_blank">Cocoapods</a>.</p>
+  {%- assign path = "snippets/installation/getting-started/" %}
+  {%- assign languages = "pod:Cocoapod" %}
+  {%- include codeblock.html l=languages p=path m=true h=false filename='1' %}
+  <p>Alternatively you can obtain the latest version with this branch of code:</p>
+  {%- assign path = "snippets/installation/getting-started/" %}
+  {%- assign languages = "pod:Cocoapod" %}
+  {%- include codeblock.html l=languages p=path m=true h=false filename='2' %}
+  <div class="uk-alert uk-border-rounded uk-margin-remove-top">
+    <p class="uk-h3 uk-padding-remove-vertical uk-margin-remove-bottom">Performance Consideration</p>
+    <ul class="uk-list uk-list-bullet">
+      <li>Bear in mind that CocoaPods will build CryptoSwift by default without <a href="https://swift.org/blog/whole-module-optimizations/" target="_blank">Whole-Module Optimization</a> and that will impact performance.</li>
+      <li>This can however be changed manually after installation, or alternatively use the <a href="https://github.com/jedlewison/cocoapods-wholemodule" target="_blank">cocoapods-wholemodule plugin</a>.</li>
+    </ul>
+  </div>
+</div>

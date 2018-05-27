@@ -1,0 +1,25 @@
+{%- if IgnoreTheseComments %}
+<!--
+Parameters
+  title: 
+  result:
+-->
+{%- endif %}
+{::options parse_block_html="false"/}
+<div class="uk-card uk-card-default uk-card-body uk-padding-small uk-margin-small">
+	<ul class="uk-accordion uk-margin-remove-vertical uk-padding-remove-vertical" uk-accordion>
+	  <li class="uk-open">
+  	  <span class="uk-h5 uk-accordion-title uk-text-small uk-margin-remove-vertical uk-padding-remove">
+      {%- if include.title -%}
+      {{ include.title }}
+      {%- else %}
+      Output
+      {%- endif -%}
+      </span>
+  	  <hr class="uk-padding-remove-vertical uk-margin-remove-vertical">
+  	  <div id="{{ codeblockid }}" class="uk-accordion-content uk-padding-remove-vertical uk-margin-remove-vertical">
+        <pre style="border: 0;"><span class="nv">{{ include.result }}</span></pre>
+      </div>
+	  </li>
+	</ul>	
+</div>

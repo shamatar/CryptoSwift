@@ -1,0 +1,83 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+{% include disable_cache.html %}
+  <title>
+{%- if page.title %}
+  {{- page.title }}
+{%- else %}
+  {{- site.title }}
+{%- endif -%}
+</title>
+{% if page.url == "/404.html" %}
+  <meta http-equiv="refresh" content="5; url=/">
+{% endif %}
+  <meta name="author" content="{{ site.author.name }}" />
+{%- if page.subtitle %}<meta name="description" content="{{ page.subtitle }}">{% endif %}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+<!-- Load all scripts: css, js, and fonts -->
+{%- include scripts.html element='header' %}
+<!-- Facebook OpenGraph tags -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ site.title | replace: ' ', '' }}"/>
+{%- if page.id %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+{%- else %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
+{%- endif %}
+{%- if page.share-img %}
+  <meta property="og:image" content="{{ page.share-img }}" />
+{%- elsif site.avatar %}
+  <meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
+{%- else %}
+  <meta property="og:image" content="" />
+{%- endif %}
+<!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@{{ site.author.twitter }}" />
+  <meta name="twitter:creator" content="@{{ site.author.twitter }}" />
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+{%- if page.path contains 'index.html' %}
+  <meta name="twitter:description" content="Index Page" />
+{%- else %}
+  <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncatewords: 50 }}" />
+{%- endif %}
+{%- if page.share-img %}
+  <meta name="twitter:image" content="{{ page.share-img }}" />
+{%- elsif site.avatar %}
+  <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />
+{%- endif %}
+<!-- MathJax -->
+{%- if page.mathjax %}
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+  {%- include mathjax_tags.html %}
+{%- endif %}
+<!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ site.baseurl }}/assets/img/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}/assets/img/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}/assets/img/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/assets/img/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ site.baseurl }}/assets/img/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site.baseurl }}/assets/img/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ site.baseurl }}/assets/img/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site.baseurl }}/assets/img/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon-128.png" sizes="128x128" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="{{ site.baseurl }}{{ site.data.config.avatar[3].url }}" color="#ffffff">
+  <meta name="application-name" content="{{ site.data.config.base.title.text }}"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="{{ site.baseurl }}/assets/img/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="{{ site.baseurl }}/assets/img/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="{{ site.baseurl }}/assets/img/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="{{ site.baseurl }}/assets/img/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="{{ site.baseurl }}/assets/img/mstile-310x310.png" />
+  <meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed={{ site.baseurl }}/feed.xml&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed={{ site.baseurl }}/feed.xml&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed={{ site.baseurl }}/feed.xml&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed={{ site.baseurl }}/feed.xml&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed={{ site.baseurl }}/feed.xml&amp;id=5;cycle=1" />
+<!-- Jekyll-seo-tags -->
+  {%- seo -%}
+</head>

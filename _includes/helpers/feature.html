@@ -1,0 +1,12 @@
+{%- if IgnoreTheseComments %}
+<!-- 
+Expected input
+  id
+ -->
+{%- endif %}
+{%- for feature in site.data.config.features %}
+  {%- if include.id == feature.id %}
+    {%- assign feature = feature %}
+    {%- break %}
+  {%- endif %}
+{%- endfor -%}

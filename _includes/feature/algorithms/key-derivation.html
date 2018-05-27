@@ -1,0 +1,26 @@
+<div class="uk-section uk-section-default uk-section-small">
+  <div class="uk-container uk-text-center uk-container-large">
+    <h2 id="algorithms" class="uk-h1 uk-heading-large uk-margin-bottom-remove">Password-Based Key Derivation Functions</h2>
+    <p class="uk-text-large uk-text-justify uk-padding-small">A key derivation function's goal is to take some source of initial keying material and derive from it one or more cryptographically strong secret keys.</p>
+    <div class="uk-grid uk-grid-divider uk-grid-margin uk-padding-small" uk-grid>
+      <div class="uk-width-1-2@s uk-width-1-3@l">
+        <div class="uk-panel">
+          <h2>PBKDF1</h2>
+          <p class="uk-text-justify">The <a href="https://tools.ietf.org/html/rfc2898#section-5.1" target="_blank">Password-Based Key Derivation Function 1 algorithm</a> applies a hash function, which shall be MD2, MD5 or SHA-1, to derive keys.</p>
+        </div>
+      </div>
+      <div class="uk-width-1-2@s uk-width-1-3@l">
+        <div class="uk-panel">
+          <h2>PBKDF2</h2>
+          <p class="uk-text-justify">The <a href="https://www.ietf.org/rfc/rfc2104.txt" target="_blank">Password-Based Key Derivation Function 2 algorithm</a> applies a pseudorandom function to derive keys. The length of the derived key is essentially unbounded.</p>
+        </div>
+      </div>
+      <div class="uk-width-1-2@s uk-width-1-3@l">
+        <div class="uk-panel">
+          <h2>HKDF</h2>
+          <p class="uk-text-justify">The <a href="https://www.ietf.org/rfc/rfc2104.txthttps://tools.ietf.org/html/rfc5869" target="_blank">HMAC-based Extract-and-Expand Key Derivation Function algorithm</a> is intended to support a wide range of applications and requirements, and is conservative in its use of cryptographic hash functions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

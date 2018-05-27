@@ -1,0 +1,8 @@
+{%- for section in site.data.config.feature.sub-sections %}
+  {%- for feature in site.data.config.features %}
+    {%- if feature.id == section %}
+      {%- include /feature/style/{{ feature.content.style }}.html f=feature %}
+    {%- endif %}
+  {%- endfor %}
+{%- endfor %}
+{%- include /feature/modals.html %}

@@ -1,0 +1,68 @@
+{%- if site.data.config.base.sticky-navbar == true %}
+<nav class="mod-nav-main uk-navbar-container" uk-sticky uk-navbar>
+{%- else %}
+<nav class="mod-nav-main uk-navbar-container" uk-navbar>
+{%- endif %}
+{%- if site.data.config.base.avatar-enabled == true %}
+  <div class="mod-nav-avatar uk-navbar-left uk-logo">
+    <a href="{{ site.url }}">
+  {%- assign number = 1 %}
+  {%- assign activelogos = "" %}
+  {%- for logo in site.data.config.avatar %}
+    {%- if logo.active == false %}
+      {%- assign number = number | plus: 1 %}
+      {%- continue %}
+    {%- endif %}
+    {%- if site.data.config.base.default-avatar-index == number %}
+      <img id="avatar{{ number }}" class="mod-nav-avatar-img uk-visible@s" src="{{ logo.url }}" width="{{ logo.width }}px" data-count="{{ site.data.config.avatar | size }}" />
+      <img id="avatar{{ number }}" class="mod-nav-avatar-img uk-hidden@s" src="{{ logo.url }}" width="{{ logo.small-width }}px" data-count="{{ site.data.config.avatar | size }}" />
+      {%- assign activelogos = activelogos + "{{ number }}," %}
+    {%- else %}
+      <img id="avatar{{ number }}" class="mod-nav-avatar-img uk-visible@s" src="{{ logo.url }}" width="{{ logo.width }}px" data-count="{{ site.data.config.avatar | size }}" style="display: none;" />
+      <img id="avatar{{ number }}" class="mod-nav-avatar-img uk-hidden@s" src="{{ logo.url }}" width="{{ logo.small-width }}px" data-count="{{ site.data.config.avatar | size }}" style="display: none;" />
+      {%- assign activelogos = activelogos | append: number | append: ',' %}
+    {%- endif %}
+    {%- assign number = number | plus: 1 %}
+  {%- endfor %}
+    <span id="active-avatar-logos" data-active-logos="{{ activelogos }}" hidden></span>
+    </a>
+  </div>
+{%- endif %}
+{%- if site.data.config.base.title.nav-enabled == true %}
+  <div class="uk-navbar-left" style="margin-left: -10px;">
+    <a class="uk-navbar-item uk-text-lowercase uk-link-muted" href="{{ site.url }}">
+      <span class="mod-nav-title-left uk-visible@s">{{ site.data.config.base.title.text | split: ' ' | first }}</span>
+      <span class="mod-nav-title-left-small uk-hidden@s">{{ site.data.config.base.title.text | split: ' ' | first }}</span>
+    {%- assign titleparts = site.data.config.base.title.text | split: ' ' | size %} 
+    {%- if titleparts > 1 %}
+      <span class="mod-nav-title-right uk-visible@s">{{ site.data.config.base.title.text | split: ' ' | last }}</span>
+      <span class="mod-nav-title-right-small uk-hidden@s">{{ site.data.config.base.title.text | split: ' ' | last }}</span>
+    {%- endif %}
+    </a>
+  </div>
+{%- endif %}
+  <div class="uk-navbar-right">
+    <div class="uk-navbar-item uk-margin-remove-right uk-visible@s">
+      <a class="uk-iconnav" href="#download-modal" uk-toggle title="Download this project" uk-tooltip><span class="mod-nav-button-download uk-button uk-button-danger uk-button-small uk-border-rounded"> Download</span></a>
+    </div>
+    <div class="uk-navbar-item uk-visible@s uk-padding-remove-left">
+      <a class="mod-nav-icon uk-iconnav" uk-icon="icon: donation; ratio: 1.2;" href="#donation-modal" uk-toggle title="Donate" uk-tooltip></a>
+    </div>
+    {%- for link in site.data.config.offcanvas.other-links %}
+      {%- if link.title == "Github Repository" %}
+        {%- assign github = link %}
+        {%- break %}
+      {%- endif %}
+    {%- endfor %}
+    <div class="uk-navbar-item uk-visible@s uk-padding-remove-left">
+      <a class="mod-nav-icon uk-iconnav" uk-icon="icon: {{ github.icon }}; ratio: 1.2;" href="{{ github.url }}" uk-toggle title="{{ github.title }}" uk-tooltip target="_blank"></a>
+    </div>
+    {%- include code-menu.html %}
+  {%- if site.data.config.base.search-navbar == true %}
+    {%- include search-menu.html %}
+  {%- endif %}
+    <div class="uk-navbar-item uk-padding-remove-left">
+      <span class="mod-nav-icon uk-iconnav" uk-icon="icon: menu; ratio: 1.2;" uk-toggle="target: #offcanvas-push; animation: uk-animation-slide-right" title="Menu" uk-tooltip></span>
+    </div>
+  </div>
+</nav>

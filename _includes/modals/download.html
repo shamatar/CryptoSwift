@@ -1,0 +1,85 @@
+{%- if theme.modalwindow.dark == true %}
+  {%- assign pcolor = "uk-light" %}
+{%- else %}
+  {%- assign pcolor = "" %}
+{%- endif %}
+<div class="uk-card-body">
+  <ul uk-tab>
+    <li><a class="uk-text-bold" href="#">Download</a></li>
+    <li><a class="mod-download-release-notes-title uk-text-bold" href="#">Release Notes</a></li>
+  </ul>
+  <ul class="uk-switcher uk-margin">
+    <li>
+      <table class="mod-download-release-table uk-table uk-table-small">
+        <thead>
+          <tr class="uk-margin-remove-bottom uk-padding-remove-bottom">
+            <th width="80%"></th>
+            <th width="20%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="uk-text-bold">
+              <p class="mod-download-zip-text {{ pcolor }}">Source code for </p>
+            </td>
+            <td>
+              <a class="mod-download-zip uk-button uk-button-default uk-border-rounded" uk-icon="icon: download; ratio: 1;" title="Download source code (zip)" uk-tooltip onclick="UIkit.modal('#download-modal').hide();" download></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-text-bold">
+              <p class="mod-download-tar-text {{ pcolor }}">Source code for </p>
+            </td>
+            <td>
+              <a class="mod-download-tar uk-button uk-button-default uk-border-rounded" uk-icon="icon: download; ratio: 1;" title="Download source code (tar.gz)" uk-tooltip onclick="UIkit.modal('#download-modal').hide();" download></a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="uk-text-bold">
+              <p class="{{ pcolor }} uk-text-small">Alternatively follow <a href="{{ site.data.config.base.releases-url }}" target="_blank" title="{{ site.data.config.base.title.text | replace: ' ', '' }} releases">this link for a comprehensive listing of all of {{ site.data.config.base.title.text | replace: ' ', '' }} releases</a>, including older release notes.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <div class="uk-card-header">
+        <div class="mod-download-release-notes uk-text-small">...</div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="uk-card-header">
+  <h3 class="uk-text-center uk-margin-remove-bottom">Clone this project</h3>
+  <table class="mod-download-clone-table uk-table uk-table-small uk-margin-remove-top">
+    <thead>
+      <tr class="uk-margin-remove-bottom uk-padding-remove-bottom">
+        <th width="80%"></th>
+        <th width="20%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="uk-text-bold">
+          Clone with HTTPS<br>
+          <span class="uk-text-small">Use Git or checkout with SVN using the web URL.</span>
+        </td>
+        <td>
+          <button class="uk-button uk-button-default uk-border-rounded" onclick="copyTextToClipboard('{{ site.data.config.download.https-clone-url }}'); UIkit.modal('#download-modal').hide();" uk-icon="icon: copy; ratio: 1;" title="Copy URL for HTTPS" uk-tooltip></button>
+        </td>
+      </tr>
+      <tr>
+        <td class="uk-text-bold">
+          Clone with SSH<br>
+          <span class="uk-text-small">Use a SSH key and passphrase from account.</span>
+        </td>
+        <td>
+          <button class="uk-button uk-button-default uk-border-rounded" onclick="copyTextToClipboard('{{ site.data.config.download.ssh-clone-url }}'); UIkit.modal('#download-modal').hide();" uk-icon="icon: copy; ratio: 1;" title="Copy URL for SSH" uk-tooltip></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>        
+</div>
+<div class="uk-card-footer">
+  {%- include /modals/donation-body.html %}
+</div>

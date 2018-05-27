@@ -1,0 +1,27 @@
+{%- if IgnoreTheseComments %}
+<!-- {{ include.element }} scripts -->
+{%- endif %}
+{%- for resource in site.data.config.resources %}
+  {%- if resource.element == include.element %}
+    {%- if resource.layout == 'common' or resource.layout == page.layout %}
+      {%- if resource.dependency contains 'search' and site.data.config.base.search-navbar == false %}
+        {%- continue %}
+      {%- endif %}
+      {%- if resource.tag == 'css' or resource.tag == 'font' %}
+        {%- if resource.url contains '//' %}
+  <link rel="stylesheet" href="{{ resource.url }}" />
+        {%- else %}
+  <link rel="stylesheet" href="{{ resource.url | prepend: site.baseurl | replace: '//', '/' }}" />
+        {%- endif %}
+      {%- elsif resource.tag == 'js' %}
+        {%- if resource.url contains '//' %}
+  <script src="{{ resource.url }}"></script>
+        {%- else %}
+  <script src="{{ resource.url | prepend: site.baseurl | replace: '//', '/' }}"></script>
+        {%- endif %}
+      {%- elsif resource.tag == 'audio' %}
+  <audio id="{{ resource.url | split: '/' | last | split: '.' | first | replace ' ','-' | downcase }}-player" src="{{ resource.url }}"></audio>
+      {%- endif %}
+    {%- endif %}
+  {%- endif %}
+{%- endfor %}

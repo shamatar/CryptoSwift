@@ -1,0 +1,24 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+  {%- include head.html %}
+  <body class="mod-base-body" onunload="">
+    <a id="top" style="visibility: hidden; position: absolute; top:0;">top</a>
+    <div class="uk-offcanvas-content">
+    {%- if site.data.config.base.nav-prefix == true %}
+      <div class="mod-base-nav-prefix uk-visible@s"></div>
+      <div class="mod-base-nav-prefix-small uk-hidden@s"></div>
+    {%- endif %}
+      {%- include nav.html %}
+      {%- include header.html type="post" %}
+      <div class="mod-base-content-section uk-container uk-container-expand uk-padding-remove uk-margin-remove">
+        {{ content }}
+      </div>
+      {%- include footer.html %}
+      <a class="mod-nav-icon mod-to-top uk-card uk-card-secondary uk-card-body uk-padding-small uk-border-rounded" href="#top" uk-scroll title="To Top" uk-tooltip uk-icon="icon: chevron-up; ratio: 1.2;"></a>
+    </div>
+    {%- include /offcanvas/menu.html %}
+    {%- include footer-scripts.html %}
+  </body>
+</html>

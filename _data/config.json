@@ -1,0 +1,267 @@
+{
+  "avatar": [
+    { "active": true, "small-width": "64", "url": "/assets/img/cryptoswift5.svg", "width": "64", "top":8 }
+  ],
+  "themes": [
+    { 
+      "id":"limoncello", 
+      "avatar": { "symbol":"#bfbc18", "background":"#fff", "stroke-width":0 }, 
+      "nav": { "prefix":"#FFF", "background": "#f3ef1e", "title-left":"#9c6900", "title-right":"#693600", "icon":"#999714", "download": { "background":"#999714", "foreground":"#fff" } },
+      "header": { "background": "#f3ef1e", "title":"#90ac01 !important", "subtitle":"#999714 !important", "metadata":"#FFF", "title-shadow":"0 0 4 #fff;" },
+      "offcanvas": { "dark":false, "background": "#FFD500", "title":"#222", "subtitle":"#222", "default":"#333", "title-left":"#333", "title-right":"#666", "icon":"#444" },
+      "modalwindow": { "dark":false, "background": "#FBFED4", "donation": { "background":"#97895B", "foreground":"#F9FAE4", "icon":"#fff", "button":{ "background":"#97895B", "foreground":"#F9FAE4" } } },
+      "base": { "to-top-background": "#FBFED4" },
+      "feature-column": { "background":"#FFD500", "color":"#3E3400", "title": "#3E3400" },
+      "feature-tab": { "background":"" },
+      "feature-accordion": { "background":"" },
+      "feature-highlight": { "dark":true, "background":"#fefe78", "color":"#3E3400", "title": "#3E3400" },
+      "feature-block": { "background":"#FFFCF2", "icon": { "background":"#97895B", "foreground":"#FBFED4" } },
+      "codeblock": { "background":"#efefef" }
+    },
+    { 
+      "id":"yellow", 
+      "avatar": { "symbol":"#9c6900", "background":"#FFCC00", "stroke-width":1 }, 
+      "nav": { "prefix":"#FFF", "background": "#FFCC00", "title-left":"#9c6900", "title-right":"#693600", "icon":"#9c6900", "download": { "background":"#cf6500", "foreground":"#FFF" } },
+      "header": { "background": "#FFCC00", "title":"#222 !important", "subtitle":"#9c6900 !important", "metadata":"#FFF", "title-shadow":"0 0 4px #9c6900, 0 0 5px #0000FF, 0 0 6px #9c6900;" },
+      "offcanvas": { "dark":true, "background": "#9c6900", "title":"#eee", "subtitle":"#ddd", "default":"#ddd", "title-left":"#ccc", "title-right":"#eee", "icon":"#fff" },
+      "modalwindow": { "dark":true, "background": "#745D00", "donation": { "background":"#cf6500", "foreground":"#fff", "icon":"#fff", "button":{ "background":"#cf6500", "foreground":"#FFF" } } },
+      "base": { "to-top-background": "#FFCC00" },
+      "feature-column": { "background":"#9c6900" },
+      "feature-tab": { "background":"" },
+      "feature-accordion": { "background":"" },
+      "feature-highlight": { "dark":true, "background":"#9c6900", "color":"#3E3400", "title": "#3E3400"  },
+      "feature-block": { "background":"#efefe", "icon": { "background":"#9c6900", "foreground":"#FFF" } },
+      "codeblock": { "background":"#efefef" }
+    },
+    { 
+      "id":"pastel-yellow", 
+      "avatar": { "symbol":"#FFD500", "background":"#FBFED4", "stroke-width":1 }, 
+      "nav": { "prefix":"#FFF", "background": "#FBFED4", "title-left":"#FFD500", "title-right":"#693600", "icon":"#97895B", "download": { "background":"#97895B", "foreground":"#F9FAE4" } },
+      "header": { "background": "#fbfdd6", "title":"#1E1F1F !important", "subtitle":"#9c6900 !important", "metadata":"#FFF", "title-shadow":"" },
+      "offcanvas": { "dark":false, "background": "#FFD500", "title":"#222", "subtitle":"#222", "default":"#333", "title-left":"#333", "title-right":"#666", "icon":"#444" },
+      "modalwindow": { "dark":false, "background": "#FBFED4", "donation": { "background":"#97895B", "foreground":"#F9FAE4", "icon":"#fff", "button":{ "background":"#97895B", "foreground":"#F9FAE4" } } },
+      "base": { "to-top-background": "#111111", "to-bottom": { "background": "rgba(0,0,0,0.1)", "color":"#111111" } },
+      "feature-column": { "background":"#FFD500", "color":"#3E3400", "title": "#3E3400" },
+      "feature-tab": { "background":"" },
+      "feature-accordion": { "background":"" },
+      "feature-highlight": { "dark":true, "background":"#FFD500", "color":"#3E3400", "title": "#3E3400" },
+      "feature-block": { "background":"#FFFCF2", "icon": { "background":"#97895B", "foreground":"#FBFED4" } },
+      "codeblock": { "background":"#efefef" }
+    },
+    { 
+      "id":"yellow-black", 
+      "avatar": { "symbol":"#111111", "background":"#fee63e", "stroke-width":0 }, 
+      "nav": { "prefix":"#FFF", "background": "#111111", "title-left":"#FBFED4", "title-right":"#FFD500", "icon":"#fee63e", "download": { "background":"#fee63e", "foreground":"#060d18" } },
+      "header": { "background": "#fee63e", "title":"#111111 !important", "subtitle":"#9c6900 !important", "metadata":"#FFF", "title-shadow":"" },
+      "offcanvas": { "dark":true, "background": "#161616", "title":"#fee63e", "subtitle":"#FFD500", "default":"#fee63e", "title-left":"#FBFED4", "title-right":"#FFD500", "icon":"#fee63e" },
+      "modalwindow": { "dark":true, "background": "#111111", "donation": { "background":"#111111", "foreground":"#fee63e", "icon":"#fff", "button":{ "background":"#fee63e", "foreground":"#111111" } } },
+      "base": { "to-top-background": "#111111", "to-bottom": { "background": "rgba(0,0,0,0.0)", "foreground":"#111111" } },
+      "feature-column": { "background":"#FFCC00", "color":"#111111", "title": "#111111" },
+      "feature-tab": { "background":"" },
+      "feature-accordion": { "background":"" },
+      "feature-highlight": { "dark":true, "background":"#111111", "color":"#cbcbcb", "title": "#dbdbdb" },
+      "feature-block": { "background":"#FFFCF2", "icon": { "background":"#FFCC00", "foreground":"#111111" } },
+      "codeblock": { "background":"#efefef" }
+    }
+  ],
+  "base": { 
+    "theme":"yellow-black",
+    "nav-prefix": true,
+    "avatar-enabled": true,
+    "avatar-selector-enabled": false,
+    "background-color": "#003367",
+    "code-show-lineno": false,
+    "default-avatar-index": 1,
+    "disable-cache": false,
+    "search-navbar": false,
+    "start-page-include": "/feature/main.html",
+    "sticky-navbar": true,
+    "textures-enabled": false,
+    "texture-index":4,
+    "title": { "text": "Crypto Swift", "nav-enabled": true },
+    "contact-email":"marcin@krzyzanowskim.com",
+    "paypal-donation-url":"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=92Z6U3LBHF9J4",
+    "profile-image-url":"/assets/img/profile.jpg",
+    "contact-fullname":"Marcin Krzyżanowski",
+    "releases-url":"https://github.com/krzyzanowskim/CryptoSwift/releases"
+  },
+  "download": { 
+    "github-latest-release-url": "https://api.github.com/repos/krzyzanowskim/CryptoSwift/releases/latest",
+    "https-clone-url": "https://github.com/krzyzanowskim/CryptoSwift.git",
+    "ssh-clone-url": "git@github.com:krzyzanowskim/CryptoSwift.git"
+  },
+  "offcanvas": {
+    "more": [
+      { "active": true, "include": "/offcanvas/template-more/description.html", "title": "description" }, 
+      { "active": true, "include": "/offcanvas/template-more/license.html", "title": "license" }, 
+      { "active": true, "include": "/offcanvas/template-more/attribution.html", "title": "attribution" }
+    ],
+    "home": [
+      { "active": true, "include": "/offcanvas/home-menu.html", "title": "Main" }, 
+      { "active": true, "include": "/offcanvas/other-links.html", "title": "Other Links" },
+      { "active": true, "include": "/offcanvas/follow-me-links.html", "title": "Follow Links" }
+    ],
+    "home-main-links": [
+      { "active": true, "type":"modal", "url": "#download-modal", "title": "Download", "icon":"download", "tooltip":"Download this project" }, 
+      { "active": true, "type":"modal", "url": "#donation-modal", "title": "Donate", "icon":"donation", "tooltip":"Support this project" },
+      { "active": true, "type":"include", "url": "/offcanvas/share-this.html", "title": "Share Links", "icon":"social", "tooltip":"Share this" }
+    ],
+    "other-links": [
+      { "active": true, "title": "Github Repository", "url":"https://github.com/krzyzanowskim/CryptoSwift", "icon":"github" },
+      { "active": true, "title": "Issues / Requests", "url":"https://github.com/krzyzanowskim/CryptoSwift/issues", "icon":"bug" },
+      { "active": true, "title": "Change Log", "url":"https://github.com/krzyzanowskim/CryptoSwift/blob/master/CHANGELOG", "icon":"file" },
+      { "active": true, "title": "Who is Marcin?", "url":"https://krzyzanowskim.com", "icon":"user" },
+      { "active": false, "title": "Documentation", "url":"https://krzyzanowskim.com", "icon":"album" }
+    ],
+    "follow-me": [
+      { "active": false, "prefix": "https://www.facebook.com/", "reference": "add_your_id", "service": "Facebook", "uk-icon": "facebook" }, 
+      { "active": true, "prefix": "https://github.com/", "reference": "krzyzanowskim", "service": "Github", "uk-icon": "github" }, 
+      { "active": true, "prefix": "https://twitter.com/", "reference": "krzyzanowskim", "service": "Twitter", "uk-icon": "twitter" }, 
+      { "active": false, "prefix": "https://plus.google.com/", "reference": "add_your_id", "service": "Google-plus", "uk-icon": "google-plus" }, 
+      { "active": true, "prefix": "mailto:", "reference": "marcin@krzyzanowskim.com", "service": "email", "uk-icon": "mail" }, 
+      { "active": true, "prefix": "https://linkedin.com/in/", "reference": "marcinkrzyzanowski", "service": "Linkedin", "uk-icon": "linkedin" }, 
+      { "active": false, "prefix": "https://www.xing.com/profile/", "reference": "add_your_id", "service": "Xing", "uk-icon": "xing" }, 
+      { "active": false, "prefix": "https://stackoverflow.com/users/", "reference": "add_your_id", "service": "Stackoverflow", "uk-icon": "stackoverflow" }, 
+      { "active": false, "prefix": "https://www.snapchat.com/add/", "reference": "add_your_id", "service": "Snapchat", "uk-icon": "snapchat" }, 
+      { "active": true, "prefix": "https://www.instagram.com/", "reference": "marcinkrzyzanowski", "service": "Instagram", "uk-icon": "instagram" }, 
+      { "active": false, "prefix": "https://www.youtube.com/", "reference": "add_your_id", "service": "Youtube", "uk-icon": "youtube" }, 
+      { "active": false, "prefix": "https://open.spotify.com/user/", "reference": "add_your_id", "service": "Spotify", "uk-icon": "spotify" }, 
+      { "active": true, "prefix": "", "reference": "", "service": "RSS", "uk-icon": "rss" }
+    ]
+  },
+  "resources": [
+    { "element": "header", "layout": "common", "tag": "css", "url": "/assets/css/normalize.css", "dependency":[]  }, 
+    { "element": "header", "layout": "common", "tag": "css", "url": "/assets/css/main.css", "dependency":[]  }, 
+    { "element": "header", "layout": "common", "tag": "css", "url": "/assets/css/selectivity-jquery.css", "dependency":["search"]  }, 
+    { "element": "header", "layout": "common", "tag": "css", "url": "/assets/css/pygment_highlights.css", "dependency":[]  }, 
+    { "element": "header", "layout": "common", "tag": "css", "url": "/assets/css/mod.css", "dependency":[]  }, 
+    { "element": "header", "layout": "common", "tag": "css", "url": "/assets/css/fonts.css", "dependency":[]  }, 
+    { "element": "header", "layout": "common", "tag": "js", "url": "/assets/js/jquery-3.2.1.min.js", "dependency":[] }, 
+    { "element": "header", "layout": "common", "tag": "js", "url": "/assets/js/uikit.min.js", "dependency":[] }, 
+    { "element": "header", "layout": "common", "tag": "js", "url": "/assets/js/uikit-icons.min.js", "dependency":[] }, 
+    { "element": "header", "layout": "common", "tag": "js", "url": "/assets/js/selectivity-jquery.js", "dependency":["search"]}, 
+    { "element": "footer", "layout": "common", "tag": "js", "url": "/assets/js/mod-layout.js", "dependency":[] },
+    { "element": "header", "layout": "common", "tag": "js", "url": "/assets/js/vivus.min.js", "dependency":[] },
+    { "element": "footer", "layout": "post", "tag": "js", "url": "/assets/js/mod-language.js", "dependency":[] }, 
+    { "element": "footer", "layout": "index", "tag": "js", "url": "/assets/js/tag-search.js", "dependency":["search"] }, 
+    { "element": "footer", "layout": "common", "tag": "audio", "url": "/assets/audio/marcinkrzyżanowski.mp3", "dependency":[] }
+  ],
+  "feature":{ 
+    "id": "feature", "include": "feature.html", "title": "CryptoSwift", "subtitle": "is a growing collection of standard and secure cryptographic algorithms implemented in Swift.", 
+    "sub-sections": [ "overview", "algorithms", "get-involved", "contribution", "getting-started", "install", "example" ],
+    "modals": [ "contribute", "license", "donation", "download" ]
+  },
+  "modals":[
+    { "id":"contribute", "title":"Contributing to the CryptoSwift Project", "url":"/modals/contribute.html" },
+    { "id":"donation", "title":"Donate to the CryptoSwift Project", "url":"/modals/donation.html" },
+    { "id":"download", "title":"Download CryptoSwift", "url":"/modals/download.html" },
+    { "id":"license", "title":"License", "url":"/modals/license.html" }
+  ],
+  "features":[
+    { 
+      "id": "introduction", 
+      "content": { "style": "paragraph", "css-attribute":"" },
+      "title": { "text":"", "css-attribute":"" }, 
+      "subtitle": { "text":"Here's just an arbitrary introduction....", "css-attribute":"" },
+      "overview-url": "/feature/introduction.html",
+      "sections": [ ]
+    },
+    { 
+      "id": "overview", 
+      "content": { "style": "highlight", "css-attribute":"" },
+      "title": { "text":"", "css-attribute":"uk-parallax='opacity: 0,1; x: 100,0; viewport: 0.3;'" }, 
+      "subtitle": { "text":"Comprehensive support for most cryptographic needs.", "css-attribute":"" },
+      "overview-url": "",
+      "sections": [
+        { "menu-title":"license", "title":"", "overview":"", "url":"/feature/overview/license.html" }, 
+        { "menu-title":"swift", "title":"", "overview":"", "url":"/feature/overview/swift.html" }, 
+        { "menu-title":"incremental", "title":"", "overview":"", "url":"/feature/overview/incremental.html" }, 
+        { "menu-title":"easy", "title":"", "overview":"", "url":"/feature/overview/easytouse.html" }, 
+        { "menu-title":"os", "title":"", "overview":"", "url":"/feature/overview/ossupported.html" }
+      ]
+    },
+    { 
+      "id": "algorithms", 
+      "content": { "style": "tab", "css-attribute":"" },
+      "title": { "text":"Algorithms", "css-attribute":"" }, 
+      "subtitle": { "text":"", "css-attribute":"" },
+      "overview-url": "",
+      "sections": [
+        { "menu-title":"Hash", "title":"Hash", "overview":"A cryptographic hash function is a mathematical algorithm which is designed to also be a one-way function, that is, a function which is infeasible to invert.", "url":"/feature/algorithms/hash.html" }, 
+        { "menu-title":"CRC", "title":"Cyclic Redundancy Checks", "overview":"A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.", "url":"/feature/algorithms/crc.html" }, 
+        { "menu-title":"Ciphers", "title":"Ciphers", "overview":"A cipher is an algorithm for performing encryption or decryption—a series of well-defined steps that can be followed as a procedure.", "url":"/feature/algorithms/ciphers.html" }, 
+        { "menu-title":"Authenticators", "title":"Message Authenticators", "overview":"A Message Authenticator is a way to check the integrity of information transmitted over or stored in an unreliable medium.", "url":"/feature/algorithms/authenticators.html" }, 
+        { "menu-title":"Cipher Block", "title":"Cipher Block Mode", "overview":"A block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity.", "url":"/feature/algorithms/cipher-block.html" }, 
+        { "menu-title":"Key Derivation", "title":"Password-Based Key Derivation Functions", "overview":"A key derivation function's goal is to take some source of initial keying material and derive from it one or more cryptographically strong secret keys.", "url":"/feature/algorithms/key-derivation.html" }, 
+        { "menu-title":"Data Padding", "title":"Data Padding", "overview":"Padding is typically the first step of a two-step padding scheme used in many hash functions including MD5 and SHA.", "url":"/feature/algorithms/data-padding.html" }
+      ]
+    },
+    { 
+      "id": "get-involved", 
+      "content": { "style": "block", "css-attribute":"" },
+      "title": { "text":"Get Involved", "css-attribute":"uk-parallax='opacity: 0,1; x: 100,0; viewport: 0.3;'" }, 
+      "subtitle": { "text":"Become a part of the CryptoSwift community.", "css-class":"" },
+      "overview-url": "",
+      "sections": [
+        { "menu-title":"Twitter", "title":"Twitter", "overview":"", "url":"/feature/get-involved/twitter.html" }, 
+        { "menu-title":"Github", "title":"Github", "overview":"", "url":"/feature/get-involved/github.html" }, 
+        { "menu-title":"Community", "title":"Community", "overview":"", "url":"/feature/get-involved/playground.html" }
+      ]
+    },
+    { 
+      "id": "contribution", 
+      "content": { "style": "column", "css-attribute":"" },
+      "title": { "text":"Contribution", "css-attribute":"uk-parallax='opacity: 0,1; x: -100,0; viewport: 0.3;'" }, 
+      "subtitle": { "text":"Open Source", "css-attribute":"" },
+      "overview-url": "/feature/contribution/overview.html",
+      "sections": [
+        { "menu-title":"License", "title":"License", "overview":"", "url":"/feature/contribution/license.html" }, 
+        { "menu-title":"Heroes", "title":"Our Heroes", "overview":"", "url":"/feature/contribution/heroes.html" }, 
+        { "menu-title":"Development", "title":"Active Development", "overview":"", "url":"/feature/contribution/development.html" }
+      ]
+    },
+    { 
+      "id": "install",
+      "content": { "style": "accordion", "css-attribute": "" },
+      "title": { "text": "Getting Started", "css-attribute": "uk-parallax='opacity: 0,1; x: 100,0; viewport: 0.3;'" }, 
+      "subtitle": { "text": "Installation of CryptoSwift", "css-attribute": "" },
+      "overview-url": "/feature/install/overview.html",
+      "sections": [
+        { "menu-title":"Framework", "title":"Embedded Framework", "overview":"", "url": "/feature/install/embedded-framework.html" }, 
+        { "menu-title":"Scheme", "title":"iOS, macOS, watchOS, tvOS", "overview":"", "url": "/feature/install/platform-schemes.html" }, 
+        { "menu-title":"Versions", "title":"Swift Versions Support", "overview":"", "url": "/feature/install/supported-versions.html" }, 
+        { "menu-title":"Cocoapods", "title":"Cocoapods", "overview":"", "url": "/feature/install/cocoapods.html" }, 
+        { "menu-title":"Carthage", "title":"Carthage", "overview":"", "url": "/feature/install/carthage.html" }, 
+        { "menu-title":"SPM", "title":"Swift Package Manager", "overview":"", "url": "/feature/install/swift-package-manager.html" }
+      ]
+    },
+    { 
+      "id": "example",
+      "content": { "style": "example", "css-attribute": "" },
+      "title": { "text": "Usage", "css-attribute": "uk-parallax='opacity: 0,1; x: -100,0; viewport: 0.3;'" }, 
+      "subtitle": { "text": "Examples of how to use CryptoSwift", "css-attribute": "" },
+      "overview-url": "/feature/examples/overview.html",
+      "sections": [
+      ]
+    }  
+  ],
+  "social-share": [
+    { "active": true, "base": "https://twitter.com/intent/tweet", "service": "Twitter", "title": "?text=", "uk-icon": "twitter", "url": "&url=" },
+    { "active": true, "base": "https://www.facebook.com/sharer/sharer.php", "service": "Facebook", "title": "&p[title]=", "uk-icon": "facebook", "url": "?u=" },
+    { "active": true, "base": "https://plus.google.com/share", "service": "Google", "title": "", "uk-icon": "google-plus", "url": "?url=" },
+    { "active": true, "base": "https://www.linkedin.com/shareArticle", "service": "Linkedin", "title": "&title=", "uk-icon": "linkedin", "url": "?mini=true&url=" },
+    { "active": true, "base": "", "service": "email", "title": "", "uk-icon": "mail", "url": "" },
+    { "active": true, "base": "http://pinterest.com/pin/create/button/", "service": "Pinterest", "title": "&description=", "uk-icon": "pinterest", "url": "?url=" },
+    { "active": true, "base": "http://tumblr.com/widgets/share/tool", "service": "Tumblr", "title": "&title=", "uk-icon": "tumblr", "url": "?canonicalUrl=" },
+    { "active": true, "base": "http://www.reddit.com/submit", "service": "Reddit", "title": "&title=", "uk-icon": "reddit", "url": "?url=" }
+  ],
+  "textures": [
+    { "url": "/assets/img/texture-blank.svg" }, 
+    { "url": "/assets/img/texture.svg" }, 
+    { "url": "/assets/img/texture2.svg" }, 
+    { "url": "/assets/img/texture3.svg" }, 
+    { "url": "/assets/img/texture4.svg" }, 
+    { "url": "/assets/img/texture5.svg" }, 
+    { "url": "/assets/img/texture6.svg" }
+  ]
+}

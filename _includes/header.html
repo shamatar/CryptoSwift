@@ -1,0 +1,46 @@
+{%- unless page.title %}
+<div class="intro-header"></div>
+{%- endunless %}
+{%- assign digit = page.date | date: "%-d" | split: '' | last %}
+{%- if digit == '1' %}
+  {%- assign date_suffix = 'st' %}
+{%- elsif digit == '2' %}
+  {%- assign date_suffix = 'nd' %}
+{%- elsif digit == '3' %}
+  {%- assign date_suffix = 'rd' %}
+{%- else %}
+  {%- assign date_suffix = 'th' %}
+{%- endif -%}
+<div class="mod-header-media uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+  <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+    <div id="my-svg" class="cf-svg" width="100%" height="100%" viewBox="0 0 1300 1043" uk-cover></div>
+    <canvas width="1300" height="1043"></canvas>
+      <a class="mod-nav-icon mod-header-to-bottom uk-card uk-card-secondary uk-card-body uk-padding-small uk-border-rounded uk-float-right" href="#bottom" uk-icon="icon: chevron-down; ratio: 1.2;" uk-scroll title="To Bottom" uk-tooltip></a>
+  </div>
+  <div>
+    <div class="uk-card-body">
+      <div id="menubar" class="mod-header-card uk-card  uk-card-transparent uk-card-large uk-card-body uk-text-center uk-width-1-1">
+        <p class="mod-header-title-small uk-hidden@s uk-h1 uk-text-capitalize">{{ site.data.config.feature.title }}</p>
+        <p class="mod-header-title uk-visible@s uk-h1 uk-text-capitalize">{{ site.data.config.feature.title }}</p>
+        <p class="mod-header-subtitle-small uk-hidden@s">{{ site.data.config.feature.subtitle }}</p>
+        <p class="mod-header-subtitle uk-visible@s">{{ site.data.config.feature.subtitle }}</p>
+      {%- if page.layout == 'index' %}
+      {%- elsif page.path contains '404.html' %}
+      {%- else %}
+        <p class="mod-header-metadata uk-padding-remove-vertical uk-margin-remove-vertical uk-text-center uk-text-muted">
+          <span class="uk-text-uppercase">{{ page.categories | first }}</span>
+          <span> &bull;</span>
+          <time>{{ page.date | date: "%-d" }}{{ date_suffix }} {{ page.date | date: "%-B %Y" }}</time>
+        </p>
+      {%- endif %} 
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  new Vivus('my-svg', {duration: 50, file: '/assets/img/header.svg', 
+    onReady: function (myVivus) {
+      myVivus.el.setAttribute('viewBox', '0 0 1300 1043');
+    }
+  });
+</script>

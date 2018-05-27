@@ -1,25 +1,31 @@
-
+---
+layout: null
+---
+{%- include /helpers/theme.html %}
 
 /* notification */
 .uk-notification-message {
   margin: 0 !important;
   padding: 0 !important;
   border-radius: 20 !important;
-  background-color: #111111 !important;
+  background-color: {{ theme.nav.background }} !important;
 }
 
 /* nav.html */
 .mod-nav-main {
-  background-color: #111111 !important;
+  background-color: {{ theme.nav.background }} !important;
+{%- if site.data.config.base.textures-enabled %}
+  background-image: url("{{ site.data.config.textures[site.data.config.base.texture-index].url }}") !important;
+{%- endif %}
   opacity: 0.9;
 }
 .mod-nav-title-left, .mod-nav-title-left-small {
-  color: #FBFED4;
+  color: {{ theme.nav.title-left }};
   font-weight: 300;
   font-size: 24px; 
 }
 .mod-nav-title-right, .mod-nav-title-right-small {
-  color: #FFD500; 
+  color: {{ theme.nav.title-right }}; 
   font-weight: 400;
   font-size: 24px;
 }
@@ -27,9 +33,10 @@
   font-size: 20px;
   font-weight: 300;
 }
+{%- assign avatar-index = site.data.config.base.default-avatar-index | minus: 1 %}
 .mod-nav-avatar {
   /*position: absolute; */
-  top: 8px !important; 
+  top: {{ site.data.config.avatar[avatar-index].top }}px !important; 
   /*z-index: 9001 !important;*/
 }
 .mod-nav-avatar img {}
@@ -38,36 +45,42 @@
   width: auto;
 }
 .mod-nav-icon, .mod-nav-icon * {
-  color: #fee63e !important;
+  color: {{ theme.nav.icon  }} !important;
 }
 .mod-nav-button-download  {
-  background-color: #fee63e !important;
-  color: #060d18 !important;
+  background-color: {{ theme.nav.download.background }} !important;
+  color: {{ theme.nav.download.foreground }} !important;
 }
 
 /* social-share-menu.html */
 .mod-social-share-menu-icon {}
 .mod-social-share-menu {
-  background-color: #111111;
+  background-color: {{ theme.nav.background }};
+{%- if site.data.config.base.textures-enabled %}
+  background-image: url("{{ site.data.config.textures[site.data.config.base.texture-index].url }}") !important;
+{%- endif %}
 }
 .mod-social-share-drop {}
 
 /* header.html */
 .mod-header-media {
-  background-color: #fee63e;
+  background-color: {{ theme.header.background }};
 }
 .mod-header-card {
-  background-color: #fee63e;
+  background-color: {{ theme.header.background }};
+{%- if site.data.config.base.textures-enabled %}
+  background-image: url("{{ site.data.config.textures[site.data.config.base.texture-index].url }}");
+{%- endif %}
 }
 .mod-header-to-bottom {
   opacity: 1.0;
-  background-color: rgba(0,0,0,0.0);
+  background-color: {{ theme.base.to-bottom.background }};
   margin-top: -40px; 
   right: 0px;
   padding: 15px !important;
 }
 .mod-header-to-bottom svg * {
-  color: #111111 !important;
+  color: {{ theme.base.to-bottom.foreground }} !important;
 }
 
 .mod-header-bottom a:hover {
@@ -78,19 +91,19 @@
   font-size: 38px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #111111 !important;
+  color: {{ theme.header.title }};
 }
 .mod-header-title {
   font-size: 60px;
-  text-shadow: ;
+  text-shadow: {{ theme.header.title-shadow }};
 }
 .mod-header-title-small {
-  text-shadow: ;
+  text-shadow: {{ theme.header.title-shadow }};
 }
 .mod-header-subtitle, .mod-header-subtitle-small, .mod-header-subtitle a, .mod-header-subtitle-small a {
   font-family: "Lato" !important;
   letter-spacing: 2px;
-  color: #9c6900 !important;
+  color: {{ theme.header.subtitle }};
   font-size: 20px;
   font-weight: 400;
 }
@@ -102,16 +115,16 @@
   font-family: "Lato" !important;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #FFF;
+  color: {{ theme.header.metadata }};
 }
 
 /* offcanvas-menu.html */
 .mod-offcanvas-menu {
-  background-color: #161616;
+  background-color: {{ theme.offcanvas.background }};
 }
 .mod-offcanvas-text {
   font-size: 16px; 
-  color: #fee63e;
+  color: {{ theme.offcanvas.default }};
 }
 .mod-offcanvas-toc-h1, .mod-offcanvas-toc-h1 a * {
   font-family: "Lato" !important;
@@ -119,52 +132,52 @@
   font-size: 20px;
   letter-spacing: 0.5px; 
   font-variant-caps: all-small-caps;
-  color: #fee63e !important;
+  color: {{ theme.offcanvas.title }} !important;
 }
 .mod-offcanvas-toc-h2 {
   font-family: "Lato" !important;
   font-weight: 300;
   font-size: 18px;
   letter-spacing: 0.5px; 
-  color: #FFD500 !important;
+  color: {{ theme.offcanvas.subtitle }} !important;
 }
 .mod-offcanvas-toc {
   padding: 5px;
 }
 .mod-offcanvas-icon, .mod-offcanvas-icon * {
-  color: #fee63e !important;
+  color: {{ theme.offcanvas.icon }} !important;
 }
 .mod-offcanvas-title-left {
-  color: #FBFED4 !important;
+  color: {{ theme.offcanvas.title-left }} !important;
 }
 .mod-offcanvas-title-right {
-  color: #FFD500 !important;
+  color: {{ theme.offcanvas.title-right }} !important;
 }
 .mod-offcanvas-paragraph, .mod-offcanvas-paragraph * {
-  color: #fee63e !important;
+  color: {{ theme.offcanvas.default }} !important;
 }
 .mod-offcanvas-header {
-  color: #fee63e !important;
+  color: {{ theme.offcanvas.title }} !important;
   font-family: "Lato" !important;
   font-size: 20px !important;
   font-weight: 400;
   font-variant-caps: all-small-caps;
 }
 .mod-offcanvas-nav-item {
-  color: #fee63e !important;
+  color: {{ theme.offcanvas.title }} !important;
   font-family: "Lato" !important;
   font-size: 20px !important;
   font-weight: 400;
   font-variant-caps: all-small-caps;
 }
 .mod-offcanvas-nav-subitem {
-  color:  #fee63e !important;
+  color:  {{ theme.offcanvas.title }} !important;
   font-size: 14px important;
 }
 
 /* modal-window.html */
 .mod-modal-body {
-  background-color: #111111;
+  background-color: {{ theme.modalwindow.background }};
 }
 
 /* base.html */
@@ -173,7 +186,7 @@
 .mod-base-content-section img {}
 .mod-base-nav-prefix {
   height: 0px;
-  background-color: #FFF;
+  background-color: {{ theme.nav.prefix }};
 }
 .mod-base-nav-prefix-small {
   height: 10px;
@@ -184,7 +197,7 @@
   right: 10px; 
   display: none;
   opacity: 0.5;
-  background-color: #111111;
+  background-color: {{ theme.base.to-top-background }};
 }
 .mod-to-top:hover {
   opacity: 1;
@@ -194,6 +207,9 @@
 .mod-code-menu {}
 .mod-language-menu {
   background-color: #003367;
+{%- if site.data.config.base.textures-enabled %}
+  background-image: url("{{ site.data.config.textures[site.data.config.base.texture-index].url }}") !important;
+{%- endif %}
 }
 
 /* search-menu.html */
@@ -201,6 +217,9 @@
 .mod-search-menu-card {
   padding-top: 6px !important;
   background-color: #003367;
+{%- if site.data.config.base.textures-enabled %}
+  background-image: url("{{ site.data.config.textures[site.data.config.base.texture-index].url }}") !important;
+{%- endif %}
 }
 .mod-search-chosen {
   font-family: "Lato";
@@ -248,7 +267,10 @@ div.selectivity-result-item.highlight {
 /* index.html */
 .mod-index-tab {}
 .mod-index-headings {
-  background-color: #fff;
+  background-color: #fff; 
+{%- if site.data.config.base.textures-enabled %}
+  background-image: url('{{ site.data.config.textures[site.data.config.base.texture-index].url }}');
+{%- endif %}
   border-bottom: 1px solid #e5e5e5;
 }
 .mod-index-category-heading-tr {
@@ -256,7 +278,10 @@ div.selectivity-result-item.highlight {
   opacity: 0.7;
 }
 .mod-index-category-heading-card {
-  background-color: #fff;
+  background-color: #fff; 
+{%- if site.data.config.base.textures-enabled %}
+  background-image: url('{{ site.data.config.textures[site.data.config.base.texture-index].url }}');
+{%- endif %}
 }
 .mod-index-category-heading-h2 {
   font-family: 'Fira Sans Extra Condensed'; 
@@ -303,35 +328,35 @@ div.selectivity-result-item.highlight {
 .mod-feature-overview-title {
   letter-spacing: 1px;
   font-variant-caps: all-small-caps;
-  color: #dbdbdb !important;
+  color: {{ theme.feature-highlight.title }} !important;
 }
 .mod-feature-contribution-title, .mod-feature-contribution-title * {
   letter-spacing: 1px;
   font-weight: 400;
-  color: #111111 !important;
+  color: {{ theme.feature-column.title }} !important;
 }
 .mod-feature-tab {
-  background-color: ;
+  background-color: {{ theme.feature-tab.background }};
 }
 .mod-feature-block {
-  background-color: #FFFCF2;
+  background-color: {{ theme.feature-block.background }};
 }
 .mod-feature-column {
-  background-color: #FFCC00;
+  background-color: {{ theme.feature-column.background }};
 }
 .mod-feature-highlight {
-  background-color: #111111;
+  background-color: {{ theme.feature-highlight.background }};
 }
 .mod-feature-highlight-overview, .mod-feature-highlight-overview svg * {
-  color: #cbcbcb !important;
+  color: {{ theme.feature-highlight.color }} !important;
 }
 
 .mod-feature-accordion {
-  background-color: ;
+  background-color: {{ theme.feature-accordion.background }};
 }
 .mod-donation {
-  color: #fee63e !important; 
-  background-color: #111111 !important; 
+  color: {{ theme.modalwindow.donation.foreground }} !important; 
+  background-color: {{ theme.modalwindow.donation.background }} !important; 
   font-size: 15px !important;
   padding: 5px;
   padding-top: 0px;
@@ -339,20 +364,20 @@ div.selectivity-result-item.highlight {
   font-variant-caps: all-petite-caps;
 }
 .mod-donation-icon, .mod-donation-icon svg * {
-  color: #fff !important;
+  color: {{ theme.modalwindow.donation.icon }} !important;
 }
 .mod-donation-button-donate {
-  background-color: #fee63e !important;
-  color: #111111 !important;
+  background-color: {{ theme.modalwindow.donation.button.background }} !important;
+  color: {{ theme.modalwindow.donation.button.foreground }} !important;
 }
 .mod-icon {
   position: relative;
   width: 80px;
   margin: -60px auto 0 auto;
   border-radius: 5px;
-  background: #FFCC00;
+  background: {{ theme.feature-block.icon.background }};
   line-height: 80px;
-  color: #111111;
+  color: {{ theme.feature-block.icon.foreground }};
 }
 .mod-icon:after {
   content: "";
@@ -363,7 +388,7 @@ div.selectivity-result-item.highlight {
   width: 0;
   height: 0;
   margin-left: -10px;
-  border: 10px solid #FFCC00;
+  border: 10px solid {{ theme.feature-block.icon.background }};
   border-right-color: transparent;
   border-left-color: transparent;
   border-bottom: none;
@@ -394,13 +419,13 @@ div.selectivity-result-item.highlight {
   right: -1px;
   left: -1px;
   bottom: -1px;
-  background: #FFCC00;;
+  background: {{ theme.feature-block.icon.background }};;
 }
 .mod-panel-link:hover:after { 
   display: block; 
 }
 .mod-panel-link:hover h2 { 
-  color: #FFCC00;; 
+  color: {{ theme.feature-block.icon.background }};; 
 }
 .uk-panel::after, .uk-panel::before {
   content:"";

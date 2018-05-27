@@ -1,0 +1,34 @@
+{%- include /helpers/theme.html %}
+{%- if include.f.title.text == "" %}
+{%- else %}
+<div id="getting-started" class="uk-card uk-card-body uk-card-default uk-text-center uk-padding-small uk-margin-small ">
+  <h1 id="{{ include.f.title.text | replace: ' ', '-' | downcase }}" class="uk-heading-hero" style="letter-spacing: 1px;" {{ include.f.title.css-attribute }}><span>{{ include.f.title.text }}</span></h1>
+</div>
+{%- endif %}
+{%- if theme.feature-highlight.dark == true %}
+  {%- assign sectioncolor = "uk-section-secondary" %}
+{%- else %}
+  {%- assign sectioncolor = "uk-section-default" %}
+{%- endif %}
+<div class="mod-feature-highlight uk-section {{ sectioncolor }} uk-section-large uk-card-body uk-card-small uk-margin-remove-bottom">
+  <div class="uk-container uk-text-center uk-container-large">
+  {%- if include.f.subtitle.text == "" %}
+  {%- else %}
+    <h1 class="mod-feature-highlight-overview uk-margin-medium-top" style="letter-spacing: 1px;" {{ include.f.subtitle.css-attribute }}>{{ include.f.subtitle.text }}</h1>
+  {%- endif %}
+    <div class="uk-text-left" {{ include.f.content.css-attribute }}>
+      {%- if include.f.overview-url == "" %}
+      {%- else %}
+        {%- include {{ include.f.overview-url }} %}
+      {%- endif %}
+    </div>  
+    <div class="uk-grid uk-grid-margin uk-padding-small" uk-grid {{ include.f.content.css-attribute }}>
+      {%- for section in include.f.sections %}
+      <div class="uk-width-1-5@s">
+        {%- include {{ section.url }} %}
+      </div>
+      {%- endfor %}
+      </div>
+    </div>
+  </div>
+</div>

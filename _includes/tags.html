@@ -1,0 +1,17 @@
+{%- if page.tags.size > 0 %}
+  <div class="uk-section uk-section-default uk-section-small uk-padding-remove-vertical">
+    <div class="uk-container uk-container-expand">
+      <div class="uk-card uk-card-default uk-card-body uk-padding-remove-top uk-margin-remove-top">
+        <h1 class="uk-h6 uk-padding-remove-vertical uk-margin-remove-vertical">Article Tags</h1>
+    {%- for tag in page.tags %}
+        <div class="mod-tag uk-label uk-border-rounded uk-text-small">
+          {{ tag }}
+        </div>
+    {%- endfor %}
+      </div>
+    </div>
+  </div>
+  <hr class="uk-margin-remove-vertical uk-padding-remove-vertical">
+{%- else %}
+  <br>
+{%- endif %}

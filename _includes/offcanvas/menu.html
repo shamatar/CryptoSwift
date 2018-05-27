@@ -1,0 +1,65 @@
+{%- include /helpers/theme.html %}
+{%- if theme.offcanvas.dark == true %}
+  {%- assign pcolor = "uk-light" %}
+{%- else %}
+  {%- assign pcolor = "" %}
+{%- endif %}
+<div id="offcanvas-push" uk-offcanvas="mode: push; flip: true;">
+  <div class="mod-offcanvas-menu uk-offcanvas-bar uk-card uk-card-small uk-card-default uk-card-body">
+    <button class="mod-offcanvas-icon uk-offcanvas-close" type="button" uk-close></button>
+    <div class="uk-h4 uk-text-center uk-margin-remove-vertical uk-text-muted uk-text-lowercase uk-navbar-item" style="font-weight: 400;">
+      <span class="mod-offcanvas-title-left" style="color: {{ theme.offcanvas.title-left }}">{{ site.data.config.base.title.text | split: ' ' | first }}</span>
+      <span class="mod-offcanvas-title-right uk-text-bold" style="color: {{ theme.offcanvas.title-right }};">{{ site.data.config.base.title.text | split: ' ' | last }}</span>
+    </div>
+  {%- if page.path contains '_posts' or page.path contains 'index.html' %}        
+    <ul uk-tab="active: 0;">
+  {%- else %}
+    <ul uk-tab>
+  {%- endif %}
+      <li><a class="uk-text-bold" href="#"><span class="mod-offcanvas-icon" uk-icon="icon: home; ratio: 1.4;" title="Main menu" uk-tooltip></a></li>
+    {%- if page.path contains '_posts' or page.path contains 'index.html' %}
+      <li><a class="uk-text-bold" href="#"><span class="mod-offcanvas-icon" uk-icon="icon: list; ratio: 1.4;" title="Table of Contents" uk-tooltip></a></li>
+    {%- endif %}
+      <li><a class="uk-text-bold" href="#"><span class="mod-offcanvas-icon" uk-icon="icon: more; ratio: 1.4;" title="More..." uk-tooltip></span></a></li>
+    </ul>
+    <ul class="uk-switcher uk-margin">
+      <li>
+        <div class="uk-flex uk-flex-column">
+          <ul class="uk-nav uk-nav-primary uk-nav-left uk-nav-parent-icon" uk-nav>
+            {%- for home in site.data.config.offcanvas.home %}
+              {%- if home.active == true %}
+                {%- if home.title == "" %}
+                {%- else %}
+                  <li class="mod-offcanvas-header uk-nav-header uk-text-bold">{{ home.title }}</li>
+                {%- endif %}
+                {%- include {{ home.include }} %}
+              {%- endif %}
+            {%- endfor %}
+          </ul>
+        </div>
+      </li>
+    {%- if page.path contains '_posts' or page.path contains 'index.html'%}  
+      <li>
+        <ul class="mod-offcanvas-toc uk-nav-default uk-nav-parent-icon" uk-nav></ul>
+      </li>
+    {%- endif %}
+      <li>
+    {%- for section in site.data.config.offcanvas.more %}
+      {%- if section.active == true %}
+        <div class="mod-offcanvas-header uk-text-bold uk-nav-header">{{ section.title }}</div>
+        <div class="mod-offcanvas-text uk-text-muted">
+          {% include {{ section.include }} %}
+        </div>
+      {%- endif %}
+    {%- endfor %}
+      </li>
+    </ul>
+  {%- assign logoCount = site.data.config.avatar | size %}
+  {%- if logoCount > 1 and site.data.config.base.avatar-selector-enabled == true %}
+    <br>
+    <center>
+      <a class="uk-button uk-button-default uk-button-small uk-border-rounded" onclick='switchLogo(-1)'>Logo -</a><a class="uk-button uk-button-default uk-button-small uk-border-rounded" onclick='switchLogo(+1)'>Logo +</a>
+    </center>
+  {%- endif %}
+  </div>
+</div>

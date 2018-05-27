@@ -1,0 +1,19 @@
+<!-- ratio: 1.2; default is 1 -->
+{%- if include.ratio %}
+{%- assign icon-size = "ratio:" | append: include.ratio %}
+{%- else %}
+{%- assign icon-size = "ratio:" | append: 1 %}
+{%- endif %}
+<nav class="uk-navbar-container uk-navbar-transparent uk-margin-remove-vertical uk-padding-remove-vertical" uk-navbar>
+  <div class="uk-navbar-left uk-margin-remove uk-padding-remove uk-link-muted">
+{%- for follow in site.data.config.offcanvas.follow-me %}
+  {%- if follow.active == true %}
+    {%- if follow.service == "RSS" and follow.prefix == blank %}
+    <a href="{{ '/feed.xml' | prepend: site.baseurl }}" uk-icon="icon: {{ follow.uk-icon }}; {{ icon-size }};" class="mod-offcanvas-icon uk-margin-small-left" title="{{ follow.service }}" uk-tooltip></a>
+    {%- else %}
+    <a href="{{ follow.prefix }}{{ follow.reference }}" uk-icon="icon: {{ follow.uk-icon }}; {{ icon-size }};" class="mod-offcanvas-icon uk-margin-small-left" title="{{ follow.service }}" uk-tooltip></a>
+    {% endif %}
+  {%- endif %}
+{%- endfor %}
+  </div>
+</nav>

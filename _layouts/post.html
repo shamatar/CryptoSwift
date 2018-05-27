@@ -1,0 +1,22 @@
+---
+layout: base
+---
+<div class="codefunc-js-post" style="display: none;" 
+     data-languages="{{ page.languages }}" 
+     data-selectlanguage="{{ page.selectlanguage }}"
+     data-title="{{ page.title }}"
+     data-subtitle="{{ page.subtitle }}"
+     data-snippetpath="{{ page.snippetpath }}"></div>
+<div class="uk-grid uk-padding-large" uk-grid>
+  <div class="uk-width-1-1">
+    {{ content }}
+{% if page.comments %}
+    <div class="disqus-comments">
+      {% include disqus.html %}
+    </div>
+{% endif %}
+  </div>
+</div>
+<div id="codefunc-clipboard" style="display: none">
+  <textarea class="codefunc-cuttextarea"></textarea>
+</div>

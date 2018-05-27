@@ -1,0 +1,12 @@
+{%- for link in site.data.config.offcanvas.home-main-links %}
+  {%- if link.type == "modal" %}
+    <li><a class="mod-offcanvas-nav-item" href="{{ link.url }}" uk-toggle title="{{ link.tooltip }}" uk-tooltip><span class="uk-margin-small-right" uk-icon="icon: {{ link.icon }}"></span> {{ link.title }}</a></li>
+  {%- elsif link.type == "include" %}
+    <li class="uk-parent">
+      <a class="mod-offcanvas-nav-item" href="#"><span class="uk-margin-small-right" uk-icon="icon: {{ link.icon }}"></span> {{ link.title }}</a>
+      <ul class="uk-nav-sub">
+        {%- include {{ link.url }} %}
+      </ul>
+    </li>
+  {%- endif %}
+{%- endfor %}
