@@ -17,7 +17,7 @@
 @testable import CryptoSwift
 import XCTest
 
-class ScryptTestsPeft: XCTestCase {
+class ScryptTestsPerf: XCTestCase {
     func testScryptPerformance() {
         let N = 16384
         let password: Array<UInt8> = Array<UInt8>(repeating: 0, count: 32)
@@ -29,8 +29,8 @@ class ScryptTestsPeft: XCTestCase {
     
 }
 
-extension ScryptTestsPeft {
-    static func allTests() -> [(String, (ScryptTestsPeft) -> () -> Void)] {
+extension ScryptTestsPerf {
+    static func allTests() -> [(String, (ScryptTestsPerf) -> () -> Void)] {
         let tests = [
             ("testScryptPerformance", testScryptPerformance),
             ]

@@ -51,7 +51,7 @@ class Scrypt: XCTestCase {
             #if !DEBUG
             let password = Array("pleaseletmein".data(using: .ascii)!)
             let salt = Array("SodiumChloride".data(using: .ascii)!)
-            let deriver = try! CryptoSwift.Scrypt(password: password, salt: salt, dkLen: 64, N: 1048576, r: 8, p: 16)
+            let deriver = try! CryptoSwift.Scrypt(password: password, salt: salt, dkLen: 64, N: 1048576, r: 8, p: 1)
             let derived = try! deriver.calculate()
             let expected: [UInt8] = Array<UInt8>.init(hex: """
                     21 01 cb 9b 6a 51 1a ae ad db be 09 cf 70 f8 81
